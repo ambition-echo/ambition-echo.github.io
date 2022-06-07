@@ -7,6 +7,11 @@ jobs:
     name: Notify
     runs-on: ubuntu-latest
     steps:
+      - name: get url
+        run: |
+          IFS=' '
+          read -ra strArr <<< ${{ github.event.issue.body }}
+          echo "url=${strArr[0]}#gitalk-container" >> $GITHUB_ENV
       # 发送到Telegram
       - uses: colutius/Telegram-Msg@main
         with:
@@ -14,7 +19,7 @@ jobs:
           chatid: ${{ secrets.TELEGRAM_TO }}
           button: true
           button_name: 👀前往查看👀
-          button_url: ${{ github.event.issue.body }}
+          button_url: ${{ env.url }}
           message: |
             🌟新评论提醒🌟
             
