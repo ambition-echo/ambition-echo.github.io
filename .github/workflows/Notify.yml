@@ -23,7 +23,8 @@ jobs:
           message: |
             🌟新评论提醒🌟
             
-            **${{ github.event.sender.login }}:**
+            ${{ github.event.sender.login }}:
+            
             ${{ github.event.comment.body }}
 
             ${{ env.url }}
