@@ -1,0 +1,17 @@
+name: telegram message
+on: issue_comment
+jobs:
+  notify:
+    name: Notify
+    runs-on: ubuntu-latest
+    steps:
+      # 发送到Telegram
+      - uses: colutius/Telegram-Msg@main
+        with:
+          token: ${{ secrets.TELEGRAM_TOKEN }}
+          chatid: ${{ secrets.TELEGRAM_TO }}
+          button: true
+          button_name: 👀前往回复👀
+          button_url: https://github.com/ambition-echo/ambition-echo.github.io/issues/${{ github.event.issue.number }}
+          message: |
+            Blog有新评论了!
