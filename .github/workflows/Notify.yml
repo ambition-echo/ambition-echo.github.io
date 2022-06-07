@@ -20,4 +20,7 @@ jobs:
             
             ${{ github.event.sender.login }} 评论了你的Blog
             《${{ github.event.issue.title }}》
+            
+            ${{ github.event.issue.body }}
+            ${{ github.event.comment.body }}
 
