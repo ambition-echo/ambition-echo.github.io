@@ -19,3 +19,4 @@ jobs:
             Blog有新评论了!
             ${{ github.event.sender.login }}
             ${{ github.event.issue.title }}
+            ${{ github.event.changes.body }}
