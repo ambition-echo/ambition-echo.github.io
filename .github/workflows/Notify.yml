@@ -14,13 +14,14 @@ jobs:
           chatid: ${{ secrets.TELEGRAM_TO }}
           button: true
           button_name: 👀前往查看👀
-          button_url: https://github.com/ambition-echo/ambition-echo.github.io/issues/${{ github.event.issue.number }}
+          button_url: ${{ github.event.issue.body }}
           message: |
             🌟新评论提醒🌟
             
-            ${{ github.event.sender.login }} 评论了你的Blog
+            [${{ github.event.sender.login }}] 评论了你的Blog
             《${{ github.event.issue.title }}》
             
-            ${{ github.event.issue.body }}
+            📄评论内容📄
+            
             ${{ github.event.comment.body }}
 
