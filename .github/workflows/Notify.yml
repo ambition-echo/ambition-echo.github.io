@@ -10,7 +10,7 @@ jobs:
       - name: get url
         run: |
           IFS=' '
-          read -ra strArr <<< ${{ github.event.issue.body }}
+          read -ra strArr <<< "${{ github.event.issue.body }}"
           echo "url=${strArr[0]}#gitalk-container" >> $GITHUB_ENV
       # 发送到Telegram
       - uses: colutius/Telegram-Msg@main
