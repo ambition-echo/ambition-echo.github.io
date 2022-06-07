@@ -1,5 +1,5 @@
 name: telegram message
-on: issue_comment
+on: [push,issue_comment]
 jobs:
   notify:
     name: Notify
