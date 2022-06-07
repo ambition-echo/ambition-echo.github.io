@@ -13,10 +13,11 @@ jobs:
           token: ${{ secrets.TELEGRAM_TOKEN }}
           chatid: ${{ secrets.TELEGRAM_TO }}
           button: true
-          button_name: 👀前往回复👀
+          button_name: 👀前往查看👀
           button_url: https://github.com/ambition-echo/ambition-echo.github.io/issues/${{ github.event.issue.number }}
           message: |
-            Blog有新评论了!
-            ${{ github.event.sender.login }}
-            ${{ github.event.issue.title }}
-            ${{ github.event.changes.body }}
+            🌟新评论提醒🌟
+            
+            ${{ github.event.sender.login }} 评论了你的Blog
+            《${{ github.event.issue.title }}》
+
