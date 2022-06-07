@@ -17,4 +17,4 @@ jobs:
           button_url: https://github.com/ambition-echo/ambition-echo.github.io/issues/${{ github.event.issue.number }}
           message: |
             Blog有新评论了!
-            ${{ github.event.issue.url }}
+            ${{ github.event.issue_comment.body }}
