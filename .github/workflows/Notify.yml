@@ -28,4 +28,5 @@ jobs:
             ${{ github.event.comment.body }}
 
             ${{ env.url }}
+          is_preview: false
 
