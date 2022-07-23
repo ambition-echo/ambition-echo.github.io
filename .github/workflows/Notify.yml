@@ -1,6 +1,6 @@
 name: telegram message
 on:
-  issue_comment:
+  discussion_comment:
     types: [created]
 jobs:
   notify:
@@ -10,8 +10,8 @@ jobs:
       - name: get url
         run: |
           IFS=' '
-          read -ra strArr <<< "${{ github.event.issue.body }}"
-          echo "url=${strArr[0]}#gitalk-container" >> $GITHUB_ENV
+          read -ra strArr <<< "${{ github.event.discussion.body }}"
+          echo "url=${strArr[0]}#post-comment" >> $GITHUB_ENV
       # 发送到Telegram
       - uses: colutius/Telegram-Msg@main
         with:
