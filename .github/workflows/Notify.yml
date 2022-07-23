@@ -19,7 +19,7 @@ jobs:
           chatid: ${{ secrets.TELEGRAM_TO }}
           button: true
           button_name: 👀在Github查看👀
-          button_url: ${{ github.event.issue.html_url }}
+          button_url: ${{ github.event.discussion.html_url }}
           message: |
             🌟新评论提醒🌟
             
