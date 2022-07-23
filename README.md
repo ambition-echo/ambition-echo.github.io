@@ -1,3 +1,3 @@
 # [huguoyang.cn](https://huguoyang.cn)
 
-博客gitalk issue仓库
+博客评论仓库
