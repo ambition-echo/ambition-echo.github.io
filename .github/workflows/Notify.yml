@@ -7,13 +7,6 @@ jobs:
     name: Notify
     runs-on: ubuntu-latest
     steps:
-      - name: get url
-        run: |
-          set IFS ' '
-          read -ra strArr <<< "${{ github.event.discussion.body }}"
-          echo ${{ github.event.discussion.body[0] }}
-          echo ${#{ github.event.discussion.body }}
-          echo "url=${{ github.event.discussion.body[0] }}#post-comment" >> $GITHUB_ENV
       # 发送到Telegram
       - uses: colutius/Telegram-Msg@main
         with:
@@ -28,6 +21,4 @@ jobs:
             ${{ github.event.sender.login }}:
             
             ${{ github.event.comment.body }}
-
-            ${{ env.url }}
 
