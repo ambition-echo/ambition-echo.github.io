@@ -12,7 +12,7 @@ jobs:
           set IFS ' '
           read -ra strArr <<< "${{ github.event.discussion.body }}"
           echo ${{ github.event.discussion.body[0] }}
-          echo ${{ #github.event.discussion.body }}
+          echo ${#{ github.event.discussion.body }}
           echo "url=${{ github.event.discussion.body[0] }}#post-comment" >> $GITHUB_ENV
       # 发送到Telegram
       - uses: colutius/Telegram-Msg@main
