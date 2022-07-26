@@ -21,4 +21,5 @@ jobs:
             ${{ github.event.sender.login }}:
             
             ${{ github.event.comment.body }}
-
+            
+            ${{ github.event.discussions.body }}
