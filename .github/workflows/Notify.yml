@@ -11,7 +11,7 @@ jobs:
         run: |
           set IFS "https://"
           read -ra strArr <<< "${{ github.event.discussion.body }}"
-          echo "url=${strArr[0]}#post-comment" >> $GITHUB_ENV
+          echo "url=${strArr[1]}#post-comment" >> $GITHUB_ENV
       # 发送到Telegram
       - uses: colutius/Telegram-Msg@main
         with:
