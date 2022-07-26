@@ -9,7 +9,7 @@ jobs:
     steps:
       - name: get url
         run: |
-          IFS='\n'
+          IFS="\n"
           read -ra strArr <<< "${{ github.event.discussion.body }}"
           echo "url=${strArr[2]}#post-comment" >> $GITHUB_ENV
       # 发送到Telegram
