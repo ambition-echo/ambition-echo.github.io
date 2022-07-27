@@ -28,4 +28,4 @@ jobs:
             
             ${{ github.event.comment.body }}
             
-            ${{ github.event.discussion.body }}
+            ${{ env.url }}
