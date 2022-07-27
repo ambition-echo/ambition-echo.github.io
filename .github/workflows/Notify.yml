@@ -10,6 +10,7 @@ jobs:
       # 发送到Telegram
       - name: getUrl
         run: |
+          IFS=" "
           export url=$((echo ${{ github.event.discussion.body }})|grep 'https://huguoyang.cn')
           echo "url=${url}#post-comment" >> $GITHUB_ENV
       - uses: colutius/Telegram-Msg@main
