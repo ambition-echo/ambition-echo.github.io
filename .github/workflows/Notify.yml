@@ -8,6 +8,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       # 发送到Telegram
+      - name: getUrl
+        run: |
+          echo "url=${${{ github.event.discussion.body }}||grep 'https://huguoyang.cn'}#post-comment" >> $GITHUB_ENV
       - uses: colutius/Telegram-Msg@main
         with:
           token: ${{ secrets.TELEGRAM_TOKEN }}
