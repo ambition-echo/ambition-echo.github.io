@@ -12,7 +12,7 @@ jobs:
         run: |
           IFS=" "
           read -ra body <<< "${{ github.event.discussion.body }}"
-          export url=$((echo ${body})|grep 'https://huguoyang.cn')
+          export url=$((echo ${body})|grep 'huguoyang.cn')
           echo "url=${url}#post-comment" >> $GITHUB_ENV
       - uses: colutius/Telegram-Msg@main
         with:
